@@ -47,7 +47,7 @@ const Problem1 = () => {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="ex. active, completed, pending, archive"
+                  placeholder="Status: ex. active, completed, pending, archive"
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
                 />
