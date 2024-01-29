@@ -10,8 +10,14 @@ const Problem2 = () => {
     setShowModalA(false);
     setShowModalB(false);
   };
-  const handleShowModalA = () => setShowModalA(true);
-  const handleShowModalB = () => setShowModalB(true);
+  const handleShowModalA = () => {
+    setShowModalA(true);
+    setShowModalB(false);
+  };
+  const handleShowModalB = () => {
+    setShowModalA(false);
+    setShowModalB(true);
+  };
 
   return (
     <div className="container">
@@ -38,32 +44,62 @@ const Problem2 = () => {
         {/* show modal A */}
         <Modal show={showModalA} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading Modal B</Modal.Title>
+            <Modal.Title>Modal heading Modal A</Modal.Title>
           </Modal.Header>
-          <Modal.Body> modal! A open</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
+          <Modal.Body>
+            <Button
+              variant="warning"
+              className="mx-3 my-3"
+              onClick={handleShowModalA}
+            >
+              Modal A - All Contacts
             </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
+            <Button
+              variant="success"
+              className="mx-3 my-3"
+              onClick={handleShowModalB}
+            >
+              Modal B - Us Contacts
             </Button>
-          </Modal.Footer>
+            <Button
+              variant="danger"
+              className="mx-3 my-3"
+              onClick={handleClose}
+            >
+              Modal C - Close
+            </Button>
+          </Modal.Body>
+          <Modal.Footer></Modal.Footer>
         </Modal>
         {/* show modal B */}
         <Modal show={showModalB} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading Modal B</Modal.Title>
           </Modal.Header>
-          <Modal.Body>B open</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
+          <Modal.Body>
+            <Button
+              variant="warning"
+              className="mx-3 my-3"
+              onClick={handleShowModalA}
+            >
+              Modal A - All Contacts
             </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
+            <Button
+              variant="success"
+              className="mx-3 my-3"
+              onClick={handleShowModalB}
+            >
+              Modal B - Us Contacts
             </Button>
-          </Modal.Footer>
+            <Button
+              variant="danger"
+              className="mx-3 my-3"
+              onClick={handleClose}
+            >
+              Modal C - Close
+            </Button>
+          </Modal.Body>
+          <Modal.Footer></Modal.Footer>
         </Modal>
       </div>
     </div>
