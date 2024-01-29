@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 const Problem2 = () => {
@@ -79,37 +78,59 @@ const Problem2 = () => {
                 <li key={contact.id}>Country: {contact?.country?.name}</li>
               ))}
             </ul>
-            <Button
-              variant="warning"
-              className="mx-3 my-3"
+            <button
+              type="button"
               onClick={handleShowModalA}
+              style={{
+                background: "#46139f",
+                borderRadius: "5px",
+                color: "#fff",
+                outline: "none",
+                border: "none",
+                marginRight: "5px",
+              }}
             >
               Modal A - All Contacts
-            </Button>
-            <Button
-              variant="success"
-              className="mx-3 my-3"
+            </button>
+            <button
+              type="button"
               onClick={handleShowModalB}
+              style={{
+                background: "#ff7f50",
+                borderRadius: "5px",
+                color: "#fff",
+                outline: "none",
+                border: "none",
+                marginRight: "5px",
+              }}
             >
               Modal B - Us Contacts
-            </Button>
-            <Button
-              variant="danger"
-              className="mx-3 my-3"
+            </button>
+            <button
+              type="button"
               onClick={handleClose}
+              style={{
+                background: "#46139f",
+                borderRadius: "5px",
+                color: "#fff",
+                outline: "none",
+                border: "none",
+                margin: "8px 0",
+              }}
             >
               Modal C - Close
-            </Button>
+            </button>
           </Modal.Body>
+          <hr />
+          <div>
+            <ul>
+              {contactFiltered.map((contact) => (
+                <li key={contact.id}>Phone: {contact.phone}</li>
+              ))}
+            </ul>
+          </div>
           <Modal.Footer className="justify-content-start">
-            <div>
-              <ul>
-                {contactFiltered.map((contact) => (
-                  <li key={contact.id}>Phone: {contact.phone}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="form-check">
+            <div className="form-check ">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -129,27 +150,57 @@ const Problem2 = () => {
             <Modal.Title>Modal heading Modal B</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Button
-              variant="warning"
-              className="mx-3 my-3"
+            <ul>
+              {contacts.map((contact) => (
+                <div key={contact.id}>
+                  {contact?.country?.name === "United States" && (
+                    <span>Country: {contact?.country?.name}</span>
+                  )}
+                </div>
+              ))}
+            </ul>
+            <button
+              type="button"
               onClick={handleShowModalA}
+              style={{
+                background: "#46139f",
+                borderRadius: "5px",
+                color: "#fff",
+                outline: "none",
+                border: "none",
+                marginRight: "5px",
+              }}
             >
               Modal A - All Contacts
-            </Button>
-            <Button
-              variant="success"
-              className="mx-3 my-3"
+            </button>
+            <button
+              type="button"
               onClick={handleShowModalB}
+              style={{
+                background: "#ff7f50",
+                borderRadius: "5px",
+                color: "#fff",
+                outline: "none",
+                border: "none",
+                marginRight: "5px",
+              }}
             >
               Modal B - Us Contacts
-            </Button>
-            <Button
-              variant="danger"
-              className="mx-3 my-3"
+            </button>
+            <button
+              type="button"
               onClick={handleClose}
+              style={{
+                background: "#46139f",
+                borderRadius: "5px",
+                color: "#fff",
+                outline: "none",
+                border: "none",
+                margin: "8px 0",
+              }}
             >
               Modal C - Close
-            </Button>
+            </button>
           </Modal.Body>
           <Modal.Footer></Modal.Footer>
         </Modal>
